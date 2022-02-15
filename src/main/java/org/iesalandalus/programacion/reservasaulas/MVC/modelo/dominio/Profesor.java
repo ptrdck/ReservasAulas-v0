@@ -11,19 +11,20 @@ public class Profesor {
 	private String correo;
 	private String telefono;
 	
+	//Constructor con parámetros
 	public Profesor (String nombre, String correo){
 		setNombre(nombre);
 		setCorreo(correo);
 	
 	}
-	
+	//Constructor con parámetros, array tridimensional
 	public Profesor (String nombre, String correo, String telefono){
 		setNombre(nombre);
 		setCorreo(correo);
 		setTelefono(telefono);
 	
 	}
-	
+	//Constructor copia
 	public Profesor (Profesor profesor) {
 		if (profesor== null) {
 			throw new NullPointerException("ERROR: No se puede copiar un profesor nulo.");
@@ -32,7 +33,7 @@ public class Profesor {
 		setCorreo(profesor.getCorreo());
 		setTelefono(profesor.getTelefono());
 	}
-	
+	//validación nombre
 	private void setNombre(String nombre) {
 		if (nombre== null) {
 			throw new NullPointerException("ERROR: El nombre de un profesor no puede ser nulo");
@@ -42,7 +43,7 @@ public class Profesor {
 		}
 		this.nombre = nombre;
 	}
-	
+	//validación correo
 	public void setCorreo(String correo) {
 		if (correo== null) {
 			throw new NullPointerException("ERROR: El correo de un profesor no puede ser nulo");
@@ -52,7 +53,7 @@ public class Profesor {
 		}
 		this.correo = correo;
 	}
-	
+	//validación teléfono
 	public void setTelefono(String telefono) {
 		if (telefono== null || !telefono.matches(ER_TELEFONO)) {
 			throw new IllegalArgumentException("ERROR:El teléfono indicado no es válido.");

@@ -6,10 +6,11 @@ public class Aula {
 	
 	private String nombre;
 	
+	//Constructor con parametro
 	public Aula(String nombre) {
 		setNombre(nombre);
 		}
-	
+	//Constructor copia
 	public Aula(Aula aula) {
 		if (aula== null) {
 			throw new NullPointerException("ERROR: No se puede copiar un aula nula.");
@@ -18,13 +19,13 @@ public class Aula {
 		this.nombre= nombre;
 	}
 	
+	//validación nombre
 	private void setNombre(String nombre) {
 		if (nombre == null) {
 			throw new NullPointerException("ERROR: El nombre del aula no puede ser nulo");
 		}
 		if (nombre.trim().isEmpty()) {
 			throw new IllegalArgumentException("ERROR: El nombre del aula no puede ser vacío.");
-		//revisar etiqueta de error. Null o Illegal
 		}
 		this.nombre = nombre;
 	}
