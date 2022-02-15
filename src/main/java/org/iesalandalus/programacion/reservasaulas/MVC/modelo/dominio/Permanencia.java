@@ -7,23 +7,22 @@ import java.util.Objects;
 public class Permanencia {
 	
 	private LocalDate dia;
-	// existencias de tramo (0,1)
-
+	
+	// tramo (0,1)
 	private Tramo tramo;
 	
 	private static final DateTimeFormatter FORMATO_DIA = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 	
+	//Constructor con parametros
 	public Permanencia(LocalDate dia, Tramo tramo) {
 		setDia(dia);
-		setTramo(tramo);
-		
+		setTramo(tramo);	
 	}
 	
-
+	//Constructor copia
 	public Permanencia(Permanencia permanencia) {
 		if (permanencia== null) {
-			throw new NullPointerException("ERROR: No se puede copiar una permanencia nula.");
-			
+			throw new NullPointerException("ERROR: No se puede copiar una permanencia nula.");		
 		}
 		setDia(permanencia.getDia());
 		setTramo(permanencia.getTramo());
@@ -77,10 +76,6 @@ public class Permanencia {
 	public String toString() {
 		return "Permanencia [dia=" + getDia().format(FORMATO_DIA) + ", tramo=" + getTramo() + "]";
 	}
-
-
-
-	
 	
 
 }
